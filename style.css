@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --control-bg-color: #29292e;
+  --card-bg-color: #e1e1e6;
+  --text-color: #323238;
+  --active-color: #02799d;
+  --button-primary-color: #323238;
+  --button-secondary-color: #ffffff;
+
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+body {
+  background: var(--bg-color);
+  font-size: 1.6rem;
+  color: var(--text-color);
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+body {
+  line-height: 0;
+}
+
+/* Classe utilitária para acessibilidade para ocultar textos para leitores de tela*/
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  appearance: none;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+
+  color: var(--button-primary-color);
+
+  transition: transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.flex {
+  display: flex;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12.8rem;
+  place-items: center;
+}
+
+#timer-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+#timer {
+  min-height: 10rem;
+  align-items: center;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 12.6rem;
+  font-weight: 600;
+}
+
+#controls {
+  gap: 4rem;
+}
+
+#controls button {
+  font-size: 4.8rem;
+}
+
+.active {
+  color: var(--active-color);
+}
+
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle {
+  display: none;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+#sound-controls {
+  display: grid;
+  gap: 3.2rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#sound-controls button {
+  font-size: 5.6rem;
+  padding: 4.8rem 4.2rem;
+  border-radius: 2.4rem;
+
+  background-color: var(--card-bg-color);
+}
+
+#sound-controls button.active {
+  background-color: var(--active-color);
+  color: var(--button-secondary-color);
+}
